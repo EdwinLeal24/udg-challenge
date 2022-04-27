@@ -1,45 +1,8 @@
 import Head from "next/head";
 import Script from "next/script";
-import styled from "styled-components";
-import {
-  Card,
-  MemeCreatorBoxText,
-  MemeCreatorEditMenu,
-} from "@components/index";
-import Image from "next/image";
-import { useUploadImage } from "../hooks/useUploadImage";
-import { useState } from "react";
-import { Button } from "@nextui-org/react";
-
-const Container = styled.div`
-  display: flex;
-  gap: ${({ theme }) => theme.sizes.size100};
-  width: 100%;
-  justify-content: center;
-`;
-
-const EditNav = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding: 10px;
-`;
+import { Canvas } from "@components/index";
 
 export default function Home({ ...pageProps }) {
-  const { imageSource, openWidget } = useUploadImage();
-  const [isEditing, setisEditing] = useState(false);
-  const [memeTitle, setMemeTitle] = useState("Este es el Title");
-  const [memeDescription, setMemeDescription] = useState(
-    "Esta es mi descripción"
-  );
-  const [font, setFont] = useState("arial");
-  const [color, setColor] = useState("#aabbcc");
-  const [fontSize, setFontSize] = useState(32);
-
-  const fonts = ["comic", "pacifico", "arial"];
-
-  const handleTextClick = () => setisEditing(!isEditing);
-
   return (
     <>
       <Head>
@@ -57,66 +20,7 @@ export default function Home({ ...pageProps }) {
         type="text/javascript"
       ></Script>
 
-      <Container>
-        <Card>
-          {imageSource ? (
-            <>
-              {/* MEME TITLE */}
-              <MemeCreatorBoxText
-                isEditing={isEditing}
-                text={memeTitle}
-                color={color}
-                font={font}
-                fontSize={fontSize}
-                inputChange={setMemeTitle}
-                handleTextClick={handleTextClick}
-                isTitle
-              />
-
-              {/* MEME DESCRIPTION */}
-              <MemeCreatorBoxText
-                isEditing={isEditing}
-                text={memeDescription}
-                color={color}
-                font={font}
-                fontSize={fontSize}
-                inputChange={setMemeDescription}
-                handleTextClick={handleTextClick}
-              />
-              <Image
-                src={imageSource}
-                alt="Your image meme"
-                layout="fill"
-                style={{ objectFit: "cover", borderRadius: "30px" }}
-              />
-            </>
-          ) : (
-            <Button bordered color="secondary" auto onClick={openWidget}>
-              Upload Image  
-              <Image
-                src="/Upload.svg"
-                width="30"
-                height="30"
-                alt="Upload Icon"
-              />
-            </Button>
-          )}
-        </Card>
-        {imageSource && (
-          <EditNav>
-            <MemeCreatorEditMenu
-              color={color}
-              setColor={setColor}
-              fonts={fonts}
-              setFont={setFont}
-              setFontSize={setFontSize}
-              memeTitle={memeTitle}
-              handleTextClick={handleTextClick}
-              isEditing={isEditing}
-            />
-          </EditNav>
-        )}
-      </Container>
+      <Canvas />
     </>
   );
 }

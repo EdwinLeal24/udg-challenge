@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { LayoutContainer, Main } from "./Layout.styles";
 import { Header, Footer } from "@components/index";
 
