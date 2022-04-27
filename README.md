@@ -24,9 +24,9 @@ I use the following 3rd party libraries in my project:
 
 Name | Reason
 --- | ---
-[styled-components](https://styled-components.com/) | for have component-level styles, I think the components looks cleaner using the styled components, is easy to have dynamically styles with props and you don't have to worry about class name bugs.
-[react-colorful](https://omgovich.github.io/react-colorful/) | It's a tiny color picker component for React, I have used it for generate the color picker for the font.
-[Next UI](https://nextui.org/) | It's a UI Library of nextjs, it's still in beta version but provides a very nice ccomponents to build interestings and beauty interfaces, I have used some components from this library to see how is work because I have never used it before.
+[styled-components](https://styled-components.com/) | To have component-level styles, I think the components looks cleaner using the styled components, it is easy to have dynamic styles with props and you don't have to worry about class name bugs.
+[react-colorful](https://omgovich.github.io/react-colorful/) | It's a tiny color picker component for React, I have used it to generate the color picker for the font.
+[Next UI](https://nextui.org/) | It's a UI Library of nextjs, it's still in beta version but provides a very nice ccomponents to build interesting and beautiful interfaces, I have used some components from this library to see how it works because I have never used it before.
 
 ## Installation / Run
 
