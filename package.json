@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@nextui-org/react": "^1.0.0-beta.6",
-    "cloudinary-react": "^1.7.2",
     "next": "12.1.5",
     "react": "18.0.0",
     "react-colorful": "^5.5.1",
