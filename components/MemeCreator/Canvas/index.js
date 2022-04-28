@@ -59,8 +59,10 @@ export const Canvas = ({}) => {
     const url = URL.createObjectURL(file);
 
     setImageSource(url);
-    setMemeTitle("YOUR MEME TITLE HERE");
-    setMemeDescription("AND YOUR MEME  DESCRIPTION HERE!");
+    setTimeout(() => {
+      setMemeTitle("YOUR MEME TITLE HERE");
+      setMemeDescription("AND YOUR MEME  DESCRIPTION HERE!");
+    }, 200);
   };
 
   return (
